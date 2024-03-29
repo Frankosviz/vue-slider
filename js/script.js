@@ -3,10 +3,20 @@ import {slides} from './data.js';
 
 const {createApp} = Vue;
 
-createApp(){
+createApp({
+    data() {
+        return {
+            slides: slides,
+            activeIndexSlide: 0
+        }    
+    },
+    methods: {
 
-    return {
-        slides: slides,
-        
-    }
-}
+    },
+    computed(){
+
+    },
+    mounted() {
+
+    }  
+}).mount('#app')
