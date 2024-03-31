@@ -7,6 +7,7 @@ createApp({
     data() {
         return {
             slides: slides,
+            shouldApplyClass: true,
             activeIndexSlide: 0
         }    
     },
