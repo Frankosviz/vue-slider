@@ -55,8 +55,8 @@ Aggiungere il **ciclo infinito** del carosello. Ovvero se la miniatura attiva è
                 </div>
 
                 <div class="thumbs">
-                    <div class="prev"></div>
-                    <div class="next"></div>
+                    <div class="prev" @click="prevSlide"></div>
+                    <div class="next" @click="nextSlide"></div>
                     <div v-for="(item, index) in slides" class="thumb" :class="{'active' : index === activeIndexSlide}" >
                         <img :src="item.image" :alt="item.title" />
                     </div>

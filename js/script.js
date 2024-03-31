@@ -7,12 +7,16 @@ createApp({
     data() {
         return {
             slides: slides,
-            shouldApplyClass: true,
             activeIndexSlide: 0
         }    
     },
     methods: {
-
+        nextSlide(){
+            this.activeIndexSlide++
+        },
+        prevSlide(){
+            this.activeIndexSlide--
+        }
     },
     computed(){
 
