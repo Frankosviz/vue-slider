@@ -55,9 +55,22 @@ Aggiungere il **ciclo infinito** del carosello. Ovvero se la miniatura attiva è
                 </div>
 
                 <div class="thumbs">
+
+                    <!-- Associo il div con class prev ad un click che mi farà avere l'immagine precedente -->
+                    
                     <div class="prev" @click="prevSlide"></div>
+
+                    <!-- Associo il div con class next ad un click che mi farà avere l'immagine successiva -->
+
                     <div class="next" @click="nextSlide"></div>
+                    
+                    <!-- Creo il ciclo for tramite vuejs associandolo direttamente al div class thumb -->
+                    <!-- Inoltre ho creato un'altra variabile che mi serve per tenere traccia dell'indice dell'elemento attivo nella lista slides. Inizializzato a 0 -->
+
                     <div v-for="(item, index) in slides" class="thumb" :class="{'active' : index === activeIndexSlide}" >
+
+                        <!-- Al mio tag img ho dato, tramite vuejs, src ed alt dinamici associati ai src e alt contenuti in data.js  -->
+
                         <img :src="item.image" :alt="item.title" />
                     </div>
                 </div>
