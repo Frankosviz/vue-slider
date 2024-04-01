@@ -33,13 +33,13 @@ createApp({
         prevSlide() {
             if (this.activeIndexSlide > 0) {
                 this.activeIndexSlide--
+            } else {
+                this.activeIndexSlide = this.slides.length - 1
             }
         }
     },
-    computed() {
-
-    },
     mounted() {
-
+        setInterval(this.nextSlide, 2000);
+        this.nextSlide();
     }
 }).mount('#app')
