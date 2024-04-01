@@ -14,7 +14,8 @@ createApp({
             // Creo una variabile activeIndexSlide e la inizializzo a 0
             // Variabile che mi serve per tenere traccia dell'indice dell'elemento attivo nella lista slides. Inizializzo a 0 perchè all'avvio l'elemento attivo sarà il primo.
 
-            activeIndexSlide: 0
+            activeIndexSlide: 0,
+            clicked : false
         }
     },
     methods: {
@@ -36,9 +37,15 @@ createApp({
             } else {
                 this.activeIndexSlide = this.slides.length - 1
             }
-        }
+        },
+        goToSlide(index) {
+            this.activeIndexSlide = index
+        },
     },
     mounted() {
+
+        // Setto l\'intervallo automatico di 2 secondi alle slide creando in mounted la funzione
+
         setInterval(this.nextSlide, 2000);
         this.nextSlide();
     }

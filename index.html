@@ -41,16 +41,16 @@ Aggiungere il **ciclo infinito** del carosello. Ovvero se la miniatura attiva è
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
+                <!-- Associo l\'immagine dinamica e l\'alt dinamico al mio div slider-wrapper -->
+                
                 <div class="item">
-                    <img src="img/01.webp" alt="Spiderman" />
+                    <img :src="slides[activeIndexSlide].image" :alt="slides[activeIndexSlide].title" />
                     <div class="text">
-                        <h3>Spiderman</h3>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit
-                            tempore aliquid deleniti aut
-                            veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum
-                            corporis.
-                        </p>
+                        
+                        <!-- Creo il titolo dinamico e il testo dinamico al mio div text -->
+                        
+                        <h3>{{slides[activeIndexSlide].title}}</h3>
+                        <p>{{slides[activeIndexSlide].text}}</p>
                     </div>
                 </div>
 
@@ -62,16 +62,16 @@ Aggiungere il **ciclo infinito** del carosello. Ovvero se la miniatura attiva è
 
                     <!-- Associo il div con class next ad un click che mi farà avere l'immagine successiva -->
 
-                    <div class="next" @click="nextSlide"></div>
+                    <div class="next" @click="nextSlide" ></div>
                     
                     <!-- Creo il ciclo for tramite vuejs associandolo direttamente al div class thumb -->
                     <!-- Inoltre ho creato associato la classe è active quando l'index è uguale all'indice activeIndexSlide che mi serve per tenere traccia dell'indice dell'elemento attivo nella lista slides. Inizializzato a 0 -->
 
-                    <div v-for="(item, index) in slides" class="thumb" :class="{'active' : index === activeIndexSlide}" >
+                    <div v-for="(item, index) in slides" :key="index" @click="goToSlide(index)" class="thumb" :class="{'active' : index === activeIndexSlide}" >
 
                         <!-- Al mio tag img ho dato, tramite vuejs, src ed alt dinamici associati ai src e alt contenuti in data.js  -->
 
-                        <img :src="item.image" :alt="item.title" />
+                        <img :src="item.image" :alt="item.title"  />
                     </div>
                 </div>
 
