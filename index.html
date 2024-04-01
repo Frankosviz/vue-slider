@@ -19,7 +19,7 @@ Descrizione:
 
 Partendo dal markup e dall'array presenti nella cartella allegata, creare uno slider di immagini con Vue.
 
-Milestone 1:
+Milestone 1: Checked
 
 Modifichiamo il template html per renderizzare dinamicamente la lista delle thumbnails e l'immagine grande (partiamo rendendo attiva la prima immagine dell'array.  Quindi l'indice attivo sarà inizialmente 0;
 
@@ -65,7 +65,7 @@ Aggiungere il **ciclo infinito** del carosello. Ovvero se la miniatura attiva è
                     <div class="next" @click="nextSlide"></div>
                     
                     <!-- Creo il ciclo for tramite vuejs associandolo direttamente al div class thumb -->
-                    <!-- Inoltre ho creato un'altra variabile che mi serve per tenere traccia dell'indice dell'elemento attivo nella lista slides. Inizializzato a 0 -->
+                    <!-- Inoltre ho creato associato la classe è active quando l'index è uguale all'indice activeIndexSlide che mi serve per tenere traccia dell'indice dell'elemento attivo nella lista slides. Inizializzato a 0 -->
 
                     <div v-for="(item, index) in slides" class="thumb" :class="{'active' : index === activeIndexSlide}" >
 
