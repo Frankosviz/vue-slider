@@ -36,10 +36,94 @@ Aggiungere il **ciclo infinito** del carosello. Ovvero se la miniatura attiva è
 
 <body>
 
+    <div>
+        <nav class="navbar navbar-light bg-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand text-warning" href="#">Navbar</a>
+                <h1 class="text-center text-uppercase text-warning">Choose your favorite game!</h1>
+                <button
+                    class="navbar-toggler bg-warning"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar"
+                    aria-controls="offcanvasNavbar"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                    class="offcanvas offcanvas-end"
+                    tabindex="-1"
+                    id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel"
+                >
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                            Offcanvas
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close text-reset"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link active"
+                                    aria-current="page"
+                                    href="#"
+                                    >Home</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a
+                                    class="nav-link dropdown-toggle"
+                                    href="#"
+                                    id="dropdownId"
+                                    data-bs-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                    >Dropdown</a
+                                >
+                                <div
+                                    class="dropdown-menu"
+                                    aria-labelledby="dropdownId"
+                                >
+                                    <a class="dropdown-item" href="#"
+                                        >Action 1</a
+                                    >
+                                    <a class="dropdown-item" href="#"
+                                        >Action 2</a
+                                    >
+                                </div>
+                            </li>
+                        </ul>
+                        <form class="d-flex">
+                            <input
+                                class="form-control me-2"
+                                type="search"
+                                placeholder="Search"
+                                aria-label="Search"
+                            />
+                            <button class="btn btn-outline-success" type="submit">
+                                Search
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
     <div id="app">
 
         <div class="container">
-            <div class="slider-wrapper" tabindex="0">
+            <div class="slider-wrapper" tabindex="0" @mouseover="stopAutoPlay" @mouseout="startAutoPlay">
 
                 <!-- Associo l\'immagine dinamica e l\'alt dinamico al mio div slider-wrapper -->
                 
@@ -76,9 +160,17 @@ Aggiungere il **ciclo infinito** del carosello. Ovvero se la miniatura attiva è
                 </div>
 
             </div>
+
         </div>
 
+        <footer>
+            <p class="text-center text-warning">Powered by Frankosviz</p>
+        </footer>
+        
+
     </div>
+
+    
 
     
     

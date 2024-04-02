@@ -15,7 +15,7 @@ createApp({
             // Variabile che mi serve per tenere traccia dell'indice dell'elemento attivo nella lista slides. Inizializzo a 0 perchè all'avvio l'elemento attivo sarà il primo.
 
             activeIndexSlide: 0,
-            clicked : false
+            autoPlayId: null
         }
     },
     methods: {
@@ -41,12 +41,18 @@ createApp({
         goToSlide(index) {
             this.activeIndexSlide = index
         },
+        startAutoPlay(){
+            this.autoPlayId = setInterval(this.nextSlide, 2000);
+        },
+        stopAutoPlay(){
+            clearInterval(this.autoPlayId);
+        }
     },
     mounted() {
 
         // Setto l\'intervallo automatico di 2 secondi alle slide creando in mounted la funzione
 
-        setInterval(this.nextSlide, 2000);
+        this.autoPlayId = setInterval(this.nextSlide, 2000);
         this.nextSlide();
     }
 }).mount('#app')
